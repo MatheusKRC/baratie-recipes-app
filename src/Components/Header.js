@@ -33,14 +33,13 @@ function Header({ pageName, dispatchSetApi }) {
   const doneRecipes = 'Done Recipes';
   const favoriteRecipes = 'Favorite Recipes';
 
-  const recipes = {
-    doneRecipes: 'Done Recipes',
-    favoriteRecipes: 'Favorite Recipes',
-  };
-
   useEffect(() => {
+    const recipes = {
+      doneRecipes: 'Done Recipes',
+      favoriteRecipes: 'Favorite Recipes',
+    };
     setPageName(history, setTitle, dispatchSetApi, recipes);
-  }, [history.location.pathname, pageName]);
+  }, [dispatchSetApi, history, history.location.pathname, pageName]);
 
   const searchIconValidate = title === 'Profile'
    || title === doneRecipes || title === favoriteRecipes;

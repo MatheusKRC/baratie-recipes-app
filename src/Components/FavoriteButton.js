@@ -19,7 +19,7 @@ function FavoriteButton({ id, type, results, dataTest, dispatchCounter, counterV
     if (getFavorite.length >= 1) {
       getFavorite.some((e) => e.id === id && setFavorite(true));
     }
-  }, []);
+  }, [id]);
 
   const handleClick = () => {
     if (favorite) {

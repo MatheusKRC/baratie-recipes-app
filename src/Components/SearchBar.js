@@ -19,7 +19,7 @@ function SearchBar({ results, type, dispatchResults }) {
 
   useEffect(() => {
     dispatchResults(filterResults);
-  }, [filterResults]);
+  }, [dispatchResults, filterResults]);
 
   const ingredientSearch = async (search) => {
     const oi = await fetchRecipeInfos(type, 'filter', 'i', search);

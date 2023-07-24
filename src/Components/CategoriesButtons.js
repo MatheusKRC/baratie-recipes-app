@@ -59,7 +59,7 @@ function CategoriesButtons({ dispatchResults }) {
 
   useEffect(() => {
     getCategories();
-  }, []);
+  });
 
   const mN = 5;
   return (

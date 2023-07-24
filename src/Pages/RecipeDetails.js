@@ -58,11 +58,11 @@ function RecipeDetails(props) {
 
     const doneRecipe = initDoneLocalStorage();
     setDoneRecipes(doneRecipe);
-  }, []);
+  }, [dispatchResults, id, pathname, typeForApi, typeForLocal]);
 
   useEffect(() => {
     doneRecipes.find((e) => e === id && setDone(true));
-  }, [doneRecipes]);
+  }, [doneRecipes, id]);
 
   useEffect(() => {
     const waitFunc = async () => {
@@ -77,7 +77,7 @@ function RecipeDetails(props) {
       setRecomendation(await setRecomendationApi(typeForApi));
     }
     fetchApi();
-  }, [pathname]);
+  }, [dispatchResults, id, pathname, typeForApi]);
 
   const handleStartRecipe = () => {
     const getInProgressLocal = getInProgress();

@@ -20,7 +20,7 @@ function CardDoneRecipes({ results, index }) {
       const mergeText = `${results[index].alcoholicOrNot}`;
       setTopText(mergeText);
     }
-  }, []);
+  }, [index, results]);
 
   const handleClickShare = () => {
     if (results[index].type === 'food') {

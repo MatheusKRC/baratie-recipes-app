@@ -46,7 +46,7 @@ function RecipeInProgress(props) {
     defaultLocalStorage();
     const getInProgressLocal = getInProgress();
     setCounter(getInProgressLocal[typeForLocal][id].length);
-  }, []);
+  }, [dispatchResults, id, pathname, typeForLocal]);
 
   useEffect(() => {
     const waitFunc = async () => {
@@ -62,7 +62,7 @@ function RecipeInProgress(props) {
     } else {
       setDisabled(true);
     }
-  }, [counter]);
+  }, [counter, ingredients.length]);
 
   const getInProgressLocal = getInProgress();
 

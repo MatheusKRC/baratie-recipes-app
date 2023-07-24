@@ -11,30 +11,30 @@ import profilewallp from '../images/pirate/profilewallp.png';
 
 function MainFoods({ results, type, dispatchResults }) {
   const history = useHistory();
-  const oneResult = async () => {
-    if (results !== null && results.length === 1 && results[0].idMeal !== '52968') {
-      history.push(`/foods/${results[0].idMeal}`);
-    }
-  };
+
   useEffect(() => {
     async function fetchApi() {
       const oi = await fetchRecipeInfos('meal', 'search', 's', '');
       dispatchResults(await oi.meals);
     }
     fetchApi();
-  }, [type]);
-
-  const nullResult = async () => {
-    const oi2 = await fetchRecipeInfos('meal', 'search', 's', '');
-    await dispatchResults(await oi2.meals);
-  };
+  }, [dispatchResults, type]);
 
   useEffect(() => {
+    const oneResult = async () => {
+      if (results !== null && results.length === 1 && results[0].idMeal !== '52968') {
+        history.push(`/foods/${results[0].idMeal}`);
+      }
+    };
+    const nullResult = async () => {
+      const oi2 = await fetchRecipeInfos('meal', 'search', 's', '');
+      await dispatchResults(await oi2.meals);
+    };
     if (results === null) {
       nullResult();
     }
     oneResult();
-  }, [results]);
+  }, [dispatchResults, history, results]);
 
   const mN = 12;
   return (

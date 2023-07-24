@@ -11,31 +11,31 @@ import profilewallp from '../images/pirate/profilewallp.png';
 
 function MainDrinks({ results, type, dispatchResults }) {
   const history = useHistory();
-  const oneResult = async () => {
-    if (results !== undefined && results.length === 1) {
-      history.push(`/drinks/${results[0].idDrink}`);
-    }
-  };
+
   useEffect(() => {
     async function fetchApi() {
       const oi = await fetchRecipeInfos('cocktail', 'search', 's', '');
       dispatchResults(await oi.drinks);
     }
     fetchApi();
-  }, [type]);
-
-  const nullResult = async () => {
-    const oi2 = await fetchRecipeInfos('cocktail', 'search', 's', '');
-    // console.log(oi2);
-    await dispatchResults(await oi2.drinks);
-  };
+  }, [dispatchResults, type]);
 
   useEffect(() => {
+    const oneResult = async () => {
+      if (results !== undefined && results.length === 1) {
+        history.push(`/drinks/${results[0].idDrink}`);
+      }
+    };
+    const nullResult = async () => {
+      const oi2 = await fetchRecipeInfos('cocktail', 'search', 's', '');
+      // console.log(oi2);
+      await dispatchResults(await oi2.drinks);
+    };
     if (results === null || results === undefined) {
       nullResult();
     }
     oneResult();
-  }, [results]);
+  }, [dispatchResults, history, results]);
   // console.log(results);
   const mN = 12;
   return (
