@@ -1,4 +1,4 @@
-const setPageName = (history, setTitle, dispatchSetApi, doneRecipes, favoriteRecipes) => {
+const setPageName = (history, setTitle, dispatchSetApi, recipes) => {
   if (history.location.pathname === '/profile') {
     setTitle('Profile');
   }
@@ -11,10 +11,10 @@ const setPageName = (history, setTitle, dispatchSetApi, doneRecipes, favoriteRec
     dispatchSetApi('meal');
   }
   if (history.location.pathname === '/done-recipes') {
-    setTitle(doneRecipes);
+    setTitle(recipes.doneRecipes);
   }
   if (history.location.pathname === '/favorite-recipes') {
-    setTitle(favoriteRecipes);
+    setTitle(recipes.favoriteRecipes);
   }
 };
 
