@@ -1,0 +1,230 @@
+@media screen and (min-width: 400px) {
+
+    html {
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+    }
+
+    .login {
+        display: flex;
+        width: 1920px;
+        height: 1080px;
+
+        background: url('../images/pirate/Sea.jpg');
+
+        align-content: center;
+        justify-content: center;
+    }
+
+    .login-main {
+        margin-top: 120px;
+        align-items: center;
+        background: url('../images/pirate/baratie2.png');
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        width: 360px;
+        height: 640px;
+
+        box-shadow: 0 4px 18px 0 rgb(15, 15, 16);
+    }
+
+    .logo {
+        margin-top: 200px;
+    }
+
+    /* Header */
+    .header-container {
+  
+        /* background: #6f96a6; */
+        background: none;
+        display: flex;
+        flex-direction: column;
+
+        width: 1920px;
+      }
+
+      .category-btn {
+        background-color: #6f96a6;
+        border: 2px solid white;
+        border-radius: 7px;
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+        margin: 2px 5px;
+        width: 300px;
+
+        margin-left: 12px;
+      }
+      
+      .search-btn {
+      
+        /* background-color: #020f59; */
+        border: 1px solid #020f59;
+        border-radius: 2px;
+        margin: 2px 5px;
+        width: 110px
+      
+        /* color: white; */
+      }
+      
+     
+/* RECIPES CARDS */
+.container-recipes {
+    /* background-color: blanchedalmond; */
+    background: blanchedalmond;
+    width: 1920px;
+    background-position-y: 0px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+  }
+  
+  .recipe-container {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+    max-width: 1920px;
+    height: 900px;
+
+    justify-content: center;
+  }
+  
+  .recipe-container button {
+    border: none;
+    border-radius: 10px;
+    margin: 7px;
+  }
+  
+  .card-container {
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+  }
+  
+  .card-container button {
+    background: #6f96a6;
+    box-shadow: 2px 2px 2px 1px #375560;
+    height: 200px;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+    height: 350px;
+    width: 93%;
+  }
+  
+
+  /* RECIPE DETAILS */
+  .details-main-container {
+    background: blanchedalmond;
+    width: 1920px;
+    /* background-position-y: 245px; */
+  
+    /* color: white; */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+  }
+  
+  .box-title {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .details-title-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px;
+    z-index: 0;
+  }
+  
+  .details-title-container div {
+    display: flex;
+  }
+  
+  .recipe-img {
+    display: flex;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 1px 2px rgb(95, 94, 94, 0.451);
+    height: 250px;
+    margin-bottom: 10px;
+    justify-content: center;
+    width: 60%;
+    height: 500px;
+
+    margin-left: 400px;
+    margin-right: 400px;
+  }
+
+  .video-container {
+    align-items: center;
+    align-self: center;
+    margin-bottom: 15px;
+  }
+  
+  .imgbtn {
+    filter: contrast(0);
+  }
+  
+  .done-page {
+    background: blanchedalmond;
+    width: 1920px;
+    background-position-y: 50px;
+    height: 100vh;
+  }
+  
+
+  /* PROFILE */
+  .profile-page {
+    align-items: center;
+    background: blanchedalmond;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 1080px;
+    width: 1920px;
+  
+  
+    /* margin-top: 150px; */
+  }
+  
+  
+  .profile-menu {
+    box-shadow: 0 4px 18px 0 rgb(15, 15, 16);
+    background: url('../images/pirate/baratie2.png');
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+
+    width: 360px;
+    height: 640px;
+  }
+  
+  .profile-menu h3 {
+    align-self: center;
+    background-color: #6f96a6;
+    border: 2px solid white;
+    border-radius: 10px;
+    color: white;
+    padding: 5px;
+
+    margin-top: 200px;
+  }
+
+  /* FAVORITE PAGE  */
+  .favorite-page {
+    background: blanchedalmond;
+  
+    height: 1080px;
+    width: 1920px;
+  }
+  
+}

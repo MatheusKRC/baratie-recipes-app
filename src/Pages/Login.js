@@ -39,40 +39,43 @@ function Login({ history }) {
   };
 
   return (
-    <div className="login-main">
-      <img className="logo" src={ Titulo } alt="logo" />
-      <div className="input-login-container">
-        <input
-          className="input-login"
-          type="email"
-          data-testid="email-input"
-          name="email"
-          value={ userEmail }
-          placeholder="Email"
-          onChange={ handleEmail }
-        />
-      </div>
-      <div>
-        <input
-          className="input-login"
-          type="password"
-          data-testid="password-input"
-          name="password"
-          value={ userPassword }
-          placeholder="Password"
-          onChange={ handlePassword }
-        />
-      </div>
-      <div>
-        <button
-          className="login-button"
-          type="button"
-          data-testid="login-submit-btn"
-          disabled={ valid }
-          onClick={ handleClick }
-        >
-          Enter
-        </button>
+    <div className="login">
+      <div className="login-main">
+        <img className="logo" src={ Titulo } alt="logo" />
+        <div className="input-login-container">
+          <input
+            className="input-login"
+            type="email"
+            data-testid="email-input"
+            name="email"
+            value={ userEmail }
+            placeholder="Email"
+            onChange={ handleEmail }
+          />
+        </div>
+        <div>
+          <input
+            className="input-login"
+            type="password"
+            data-testid="password-input"
+            name="password"
+            value={ userPassword }
+            placeholder="Password"
+            onChange={ handlePassword }
+          />
+        </div>
+        <div>
+          <button
+            className="login-button"
+            type="button"
+            data-testid="login-submit-btn"
+            disabled={ valid }
+            onClick={ handleClick }
+          >
+            Enter
+          </button>
+        </div>
+
       </div>
     </div>
   );
