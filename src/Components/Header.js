@@ -16,6 +16,7 @@ import ProfileWhite from '../images/pirate/ProfileWhite.png';
 import SearchBar from './SearchBar';
 import CategoriesButtons from './CategoriesButtons';
 import Drinks from '../images/pirate/Drinks.png';
+import setPageName from '../0 - Services/Functions/setName';
 
 function Header({ pageName, dispatchSetApi }) {
   const history = useHistory();
@@ -32,28 +33,8 @@ function Header({ pageName, dispatchSetApi }) {
   const doneRecipes = 'Done Recipes';
   const favoriteRecipes = 'Favorite Recipes';
 
-  const setPageName = () => {
-    if (history.location.pathname === '/profile') {
-      setTitle('Profile');
-    }
-    if (history.location.pathname === '/drinks') {
-      setTitle('Drinks');
-      dispatchSetApi('cocktail');
-    }
-    if (history.location.pathname === '/foods') {
-      setTitle('Foods');
-      dispatchSetApi('meal');
-    }
-    if (history.location.pathname === '/done-recipes') {
-      setTitle(doneRecipes);
-    }
-    if (history.location.pathname === '/favorite-recipes') {
-      setTitle(favoriteRecipes);
-    }
-  };
-
   useEffect(() => {
-    setPageName();
+    setPageName(history, setTitle, dispatchSetApi, doneRecipes, favoriteRecipes);
   }, [history.location.pathname, pageName]);
 
   const searchIconValidate = title === 'Profile'
